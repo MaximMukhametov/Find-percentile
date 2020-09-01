@@ -5,7 +5,7 @@ def search_percentile(array: list, index: int) -> Optional[int]:
     """
     Looks for the approximate percentile in the data array.
     This is something like a stripped-down version of quicksort, because
-    there is no need to honestly sort the whole array to find the percentile
+    there is no need to honestly sort the whole array to find the percentile.
     """
     if len(array) == 0:
         return None
