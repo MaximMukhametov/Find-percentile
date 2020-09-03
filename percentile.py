@@ -4,7 +4,7 @@ from typing import Optional
 
 def percentile(array: list, percent: float) -> Optional[float]:
     """Find the percentile of an array of values."""
-    if len(array) == 0:
+    if not array:
         return None
 
     array.sort()

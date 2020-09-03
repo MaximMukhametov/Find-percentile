@@ -6,7 +6,7 @@ from numpy import array, percentile as numpy_percentile
 def percentile(data_set: list,
                percent: Union[int, float]) -> Optional[float]:
     """Find the percentile of an array of values."""
-    if len(data_set) == 0:
+    if not data_set:
         return None
     data_set = array(data_set, dtype=int)
     return numpy_percentile(data_set, percent)

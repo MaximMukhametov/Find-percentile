@@ -3,7 +3,7 @@ from typing import Optional
 
 def search_percentile(array: list, percent: float) -> Optional[int]:
     """Looks for the approximate percentile in the data array."""
-    if len(array) == 0:
+    if not array:
         return None
     array.sort()
     target_index = round(len(array) * percent)
