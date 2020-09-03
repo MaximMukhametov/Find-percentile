@@ -7,5 +7,4 @@ twentieth_percentile = partial(percentile, q=20)
 if __name__ == "__main__":
     # convert the list of numeric strings to numpy.array of integers
     value_list = array(input().split(), dtype=int)
-
-    print(twentieth_percentile(value_list))
+    print(twentieth_percentile(value_list) if value_list.size > 0 else None)
