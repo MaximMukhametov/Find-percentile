@@ -1,10 +1,17 @@
-from numpy import percentile, array
-from functools import partial
+from typing import Optional, Union
 
-# create a function to get the twentieth percentile
-twentieth_percentile = partial(percentile, q=20)
+from numpy import array, percentile as numpy_percentile
+
+
+def percentile(data_set: list,
+               percent: Union[int, float]) -> Optional[float]:
+    """Find the percentile of an array of values."""
+    if len(data_set) == 0:
+        return None
+    data_set = array(data_set, dtype=int)
+    return numpy_percentile(data_set, percent)
+
 
 if __name__ == "__main__":
-    # convert the list of numeric strings to numpy.array of integers
-    value_list = array(input().split(), dtype=int)
-    print(twentieth_percentile(value_list) if value_list.size > 0 else None)
+    value_list = input().split()
+    print(percentile(value_list, 20))
