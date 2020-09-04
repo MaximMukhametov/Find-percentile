@@ -16,8 +16,8 @@ def percentile(array: list, percent: float) -> Optional[float]:
         return array[int(exact_index)]
 
     # interpolates values against an exact index
-    below_part = array[int(floor_index)] * (ceil_index - exact_index)
-    above_part = array[int(ceil_index)] * (exact_index - floor_index)
+    below_part = array[floor_index] * (ceil_index - exact_index)
+    above_part = array[ceil_index] * (exact_index - floor_index)
 
     return below_part + above_part
 
