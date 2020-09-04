@@ -1,7 +1,5 @@
 from typing import Optional
 
-п = '1 3 5 6 9 11 12 13 19 21 22 32 35 36 45 44 55 68 79 80 81 88 90 91 92 100 112 113 114 120 121 132 145 146 149 150 155 180 189 190 4 5 1 5 45 85 12 4 54 121 24545 -454 0'
-
 
 def search_percentile(array: list,
                       index: int = None,
