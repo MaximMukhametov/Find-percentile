@@ -1,7 +1,7 @@
 from typing import Optional
 
 
-def search_percentile(array: list, index: int) -> Optional[int]:
+def search_percentile(array: list, percent: float) -> Optional[int]:
     """
     Looks for the approximate percentile in the data array.
     This is something like a stripped-down version of quicksort, because
@@ -10,6 +10,7 @@ def search_percentile(array: list, index: int) -> Optional[int]:
     if not array:
         return None
     else:
+        index = round(len(value_list) * percent)
         below_values = []
         above_values = []
         equal_values = []
@@ -36,6 +37,4 @@ def search_percentile(array: list, index: int) -> Optional[int]:
 
 if __name__ == "__main__":
     value_list = input().split()
-    percent = 0.2
-    target_index = round(len(value_list) * percent)
-    print(search_percentile(value_list, target_index))
+    print(search_percentile(value_list, 0.2))
